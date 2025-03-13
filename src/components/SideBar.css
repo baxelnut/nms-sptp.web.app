@@ -1,0 +1,202 @@
+.sidebar {
+  position: fixed;
+  width: 18%;
+  height: 100vh;
+  background-color: var(--color-surface);
+  padding: 0;
+  left: 0;
+  border-right: 0.5px solid var(--color-on-surface-variant);
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar .logo {
+  padding-top: 6px;
+  padding-inline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: inherit;
+}
+
+.logo h5 {
+  width: fit-content;
+  text-align: start;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.menu {
+  padding-inline: 5%;
+  justify-content: space-between;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-selection {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  border-radius: 6px;
+  padding-block: 10px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-selection.contact,
+.menu-selection .contact-info,
+.menu-selection .contact-info *,
+.menu-selection .contact-icon {
+  cursor: default;
+  pointer-events: none;
+}
+
+.menu-selection.contact * {
+  font-size: 13px;
+}
+
+.menu-selection.selected {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+.menu-selection.selected .icon svg {
+  filter: invert(93%) sepia(81%) saturate(4725%) hue-rotate(180deg)
+    brightness(108%) contrast(107%);
+}
+
+.menu-selection:hover:not(.contact):not(.contact-info):not(.contact-info *):not(
+    .contact-icon
+  ) {
+  background-color: var(--color-primary-variant);
+  color: var(--color-surface);
+}
+
+.menu-selection .icon,
+.contact-icon {
+  width: 25px;
+  aspect-ratio: 1;
+  margin-inline: 20px;
+}
+
+.img-icon {
+  height: inherit;
+  width: inherit;
+  filter: none;
+}
+
+.menu-selection .icon img {
+  border-radius: 50%;
+  filter: none;
+}
+
+.menu-selection.contact {
+  display: flex;
+  align-items: center;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 8px;
+}
+
+.contact-info * {
+  padding: 0;
+  margin: 0;
+}
+
+.contact-menu,
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-self: center;
+  gap: 8px;
+  padding-bottom: 10%;
+}
+
+.nav-menu {
+  gap: 20px;
+}
+
+.contact-menu .menu-selection.contact,
+.nav-menu .menu-selection {
+  width: 100%;
+}
+
+.menu-divider {
+  width: 90%;
+  height: 2px;
+  background: linear-gradient(to right, #ff00ff, #00ffff);
+  border: none;
+  margin: 10px auto;
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 1200px) {
+  .sidebar {
+    width: 10%;
+  }
+
+  .menu {
+    align-items: center;
+    justify-content: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .menu-selection .icon {
+    padding: 4px;
+    width: 30px;
+    aspect-ratio: 1;
+    margin-inline: 0;
+  }
+
+  .menu-selection h6,
+  h5 {
+    font-size: 14px;
+  }
+
+  .menu-selection {
+    padding-block: 0;
+    width: 95%;
+  }
+
+  .logo {
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+  }
+
+  img,
+  .icon {
+    width: 20px;
+    aspect-ratio: 1;
+    margin: 0;
+    padding: 0;
+  }
+
+  .logo img {
+    margin: 0;
+    padding: 0;
+  }
+
+  .logo h5,
+  .sidebar h5 h6,
+  .menu p,
+  .menu h6,
+  .contact-menu,
+  .menu-divider {
+    display: none;
+  }
+}
